@@ -1,0 +1,41 @@
+<div class="centered-content">
+    <div class="login-box">
+        <h1 class="title has-text-primary">
+            User Sign Up
+        </h1>
+        <div class="field">
+            <p class="control has-background-light has-icons-left has-icons-right">
+              <input class="input" required #name type="text" placeholder="Name">
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-background-light has-icons-left">
+              <input class="input" required #password type="password" placeholder="Password">
+              <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+              </span>
+            </p>
+          </div>
+                    
+          <div class="field is-grouped">
+            <p class="control">
+              <button class="button is-primary" (click) = "addUser(name.value, password.value)">
+                Sign Up
+              </button>
+            </p>
+            -OR-
+            <p class="control">
+              <button routerLink="/login-user" class="button is-primary is-pulled-right">
+                Login
+              </button>
+            </p>
+          </div>
+          <div *ngIf="signup">Registered succesfully!</div>
+          <button routerLink="/" class="button is-primary is-light">
+            Home
+          </button>
+    </div>
+</div>

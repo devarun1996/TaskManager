@@ -1,0 +1,25 @@
+<div class="centered-content">
+    <div class="task-manager-container">
+
+        <div class="task-list-container">
+            <h1 class="title has-text-primary">
+                My Tasks
+            </h1>
+            <div [class.is-complete]="task.deadline === 0" class="task is-grouped" *ngFor = "let task of tasks">
+                <span class="icon2 is-small is-pulled-right">
+                    <i *ngIf="!(task.deadline === 0)" class="fa fa-edit" [routerLink]="['./update-task', task._id]"></i>
+                </span> 
+                                    
+                <p>Title: {{task.task}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Deadline: {{task.deadline}} days
+                </p>
+                <p> Note: {{task.note}}</p><br>                    
+                <p>Progress: {{task.progress}}%</p>
+                <progress class="progress is-success is-small" [value]="task.progress" max="100"></progress>
+            </div>
+        </div>
+
+        <button routerLink="/login-user" class="button is-primary is-small">
+            Login page
+          </button>
+    </div>
+</div>

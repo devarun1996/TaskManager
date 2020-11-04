@@ -1,0 +1,43 @@
+<div class="centered-content">
+    <div class="task-manager-container">
+        
+        <div class="sidebar">
+            <h1 class="title has-text-primary">
+                Employees
+            </h1>
+            <div class="list-menu">
+                <a class="list-menu-items" [routerLink]="['/employees', emp._id]" routerLinkActive="is-active" *ngFor="let emp of employees">
+                    
+                    <p>{{emp.name}}</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="icon2 is-small ">
+                        <i class="fa fa-trash" (click)="deleteEmp(emp._id)"></i>
+                    </span>
+                </a>
+            </div>
+
+            <button class="button is-primary" routerLink="/add-emp">+ New Employee</button>
+        </div>
+
+        <div class="task-list-container">
+            <div *ngIf="tasks">
+                <h1 class="title has-text-primary">
+                    Tasks
+                </h1>
+                
+                <div [class.is-complete]="task.deadline === 0" class="task is-grouped" *ngFor = "let task of tasks">
+                    <span class="icon2 is-small is-pulled-right">
+                        <i class="fa fa-trash" (click)="delete(task.empId, task._id)"></i> &nbsp;
+                        <i *ngIf="!(task.deadline === 0)" class="fa fa-edit" [routerLink]="['./edit-task', task._id]"></i>
+                    </span> 
+                    <p>Title: {{task.task}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Deadline: {{task.deadline}} days 
+                    </p>  
+                    <p>Note: {{task.note}}</p><br>
+                    <p>Progress: {{task.progress}}%</p>
+                    <progress class="progress is-success is-small" [value]="task.progress" max="100"></progress>
+                </div>
+                <button class="button is-primary is-rounded" routerLink="./add-task">+ New Task</button>
+            </div>
+        </div>
+        <button class="button is-primary is-small" routerLink="/">Home</button>
+    </div>
+</div>

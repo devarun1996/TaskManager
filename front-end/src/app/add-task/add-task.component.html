@@ -1,0 +1,31 @@
+<div class="centered-content">
+    <div class="modal-box">
+        <h1 class="title">
+            Create a new task
+        </h1>
+        <p class="control is-expanded">
+            <input 
+                type="text" 
+                class="input has-background-light" 
+                #task 
+                required 
+                placeholder="Enter the new task">
+        </p>
+        <br>
+        <label for="quantity">Deadline(in days):</label>
+        <input type="number" #deadline id="quantity" name="quantity" value="0" min="1" max="50">
+        
+        <div class="buttons is-right is-grouped" style="margin-top: 20px;">
+            <p class="control">
+                <a [routerLink]="['/employees', empId]" class="button">
+                    Cancel
+                </a>
+            </p>
+            <p class="control">
+                <a class="button is-primary" (click) = "createNewTask(task.value, deadline.value)" routerLink="/">
+                  Create  
+                </a>
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+@import '../../main-style.scss';
+
+.login-box{
+    padding: 30px;
+    background: $light;
+    border-radius: 5px;
+}
+
+.title{
+    font-family: 'Nunito';
+
+}
+
+.is-pulled-right{
+    margin-left: 80px;
+}
+
+.button.is-primary.is-light{
+    margin-left: 35%;
+    //margin-top: 30px;
+}

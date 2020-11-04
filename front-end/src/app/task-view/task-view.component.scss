@@ -1,0 +1,121 @@
+
+@import '../../main-style.scss';
+
+
+.task-manager-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    max-width: 800px;
+    max-height: 600px;
+    //position: relative;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    padding: 20px;
+    background: white;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.task-list-container{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    background: $light;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 20px;
+    position: relative;
+}
+
+.title{
+    font-family: 'Lato';
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.list-menu{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    
+    .list-menu-items{
+        display: flex;
+        align-items: center;
+        padding: 0px 15px;
+        color: $green;
+        border-radius: 5px;
+        margin-bottom: 15px;
+
+        &:hover {
+            background: $light;
+        }
+
+        &.is-active{
+            background: limegreen;
+            color: darkslategrey;
+        }
+    }
+
+
+}
+
+.button.is-primary{
+    
+    margin-top: 500px;
+    position: absolute;
+     
+    &.is-rounded{
+         margin-top: 0px;
+      margin-left: 180px;  
+    }
+
+}
+
+.button.is-primary.is-small{
+    position: absolute;
+    margin-top: 40%;
+    margin-left: 30%;
+    //color: black;
+}
+
+.task{
+    background: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+
+    &:not(.is-complete){   
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+        &:hover {
+            box-shadow: 0 0 0 5px #eeeeee;
+        }
+    }
+
+    &.is-complete{
+        text-decoration: line-through;
+        opacity: 0.7;
+    }
+}
+
+.icon2{
+
+        cursor: pointer;
+        color: darkslategray;
+        .fa-trash{
+            &:hover {
+                color: red;
+            }
+        }
+        .fa-edit{
+            &:hover {
+                color: $green;
+            }
+        }
+    }

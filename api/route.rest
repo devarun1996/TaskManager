@@ -1,0 +1,69 @@
+
+POST http://localhost:3000/employee
+Content-Type: application/json
+
+{
+    "name": "ABC"
+}
+
+###
+
+DELETE http://localhost:3000/employee/5f9df912fbf3873a446d6011
+
+###
+
+GET http://localhost:3000/employee
+
+
+###
+
+GET http://localhost:3000/employee/5f9fe705ed321b365c063a17
+
+###
+
+POST http://localhost:3000/employee/5f9fd79d0d7d1020882ef2c0/task
+Content-Type: application/json
+
+{
+    "task": "Extra work!"
+}
+
+###
+
+GET http://localhost:3000/employee/5f9fe705ed321b365c063a17/task
+
+###
+
+PATCH http://localhost:3000/employee/5f9fd79d0d7d1020882ef2c0/task/5f9fde220c906d093c0d7f14
+Content-Type: application/json
+
+{
+    "note": "Started!",
+    "progress": 20
+}
+
+###
+
+DELETE http://localhost:3000/employee/5f9df88545dd923e8025bfd2/task/5f9f5d16f1994a32d8103b63
+
+###
+
+GET http://localhost:3000/employee/5fa1098a5819a80a380a4dcf/task/5fa109915819a80a380a4dd0
+
+###
+
+GET http://localhost:3000/user
+
+###
+
+POST http://localhost:3000/login-user
+Content-Type: application/json
+
+{
+    "name": "XYZ",
+    "password": "123456"
+}
+
+###
+
+DELETE http://localhost:3000/user/5fa0ffc087cbf12340737316

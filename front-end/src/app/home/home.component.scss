@@ -1,0 +1,46 @@
+
+@import '../../main-style.scss';
+
+
+.task-manager-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    max-width: 400px;
+    max-height: 280px;
+    position: relative;
+}
+
+
+.task-list-container{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    background: $light;
+    padding: 20px;
+    //position: relative;
+}
+
+.task2-list-container{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    background: $light;
+    padding: 20px;
+    //position: relative;
+}
+
+.title{
+    font-family: 'Lato';
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.button{
+    //margin-top: 360px;
+    //position: absolute;
+    padding: 10px;
+    
+}
+
